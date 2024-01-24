@@ -1,4 +1,6 @@
-![BuildStatus](https://github.com/AmazonRF/actions/workflows/test.yml/badge.svg?event=push)
+![BuildStatus](https://github.com/AmazonRF/HW2-BFS/actions/workflows/test.yml/badge.svg)
+
+
 
 # Assignment 2
 Breadth-first search
