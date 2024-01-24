@@ -1,7 +1,7 @@
 # write tests for bfs
 import pytest
 import networkx as nx
-from search import Graph
+from search import graph
 
 def test_bfs_traversal():
     """
@@ -11,14 +11,17 @@ def test_bfs_traversal():
     that all nodes are being traversed (ie. returns 
     the right number of nodes, in the right order, etc..)
     """
-    graph = nx.read_adjlist("./data/tiny_network.adjlist", create_using=nx.DiGraph, delimiter=";")
-    start_node = list(graph.nodes())[0]
+    tiny_graph_nx = nx.read_adjlist("./data/tiny_network.adjlist", create_using=nx.DiGraph, delimiter=";")
+    tiny_graph_my = graph.Graph("./data/tiny_network.adjlist")
     
-    groundTruth = list(nx.bfs_edges(graph, start_node))
+    start_node = list(tiny_graph_nx.nodes())[0]
+    
+    groundTruth = list(nx.bfs_edges(tiny_graph_nx, start_node))
     groundTruth = [start_node] + [v for u, v in groundTruth]
 
-    my_bfs_path = Graph.bfs(graph, start_node)
+    my_bfs_path = tiny_graph_my.bfs(start_node)
 
+    # with pytest.raises(ValueError):pass
     assert my_bfs_path == groundTruth
 
 def test_bfs():

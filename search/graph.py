@@ -21,11 +21,11 @@ class Graph:
             * If there is an end node input and a path does not exist, return None
 
             """
-            graph = self
+            graph_ = self.graph
             
-            if start not in graph:
+            if start not in graph_:
                 return None  # Start node not in the graph
-            if end not in graph and end != None:
+            if end not in graph_ and end != None:
                 return None  # End node not in the graph
 
             visited = []
@@ -52,7 +52,7 @@ class Graph:
                     return path[::-1]  #invert the order
                     
 
-                for neighbor in graph.neighbors(current_node):
+                for neighbor in graph_.neighbors(current_node):
                     if neighbor not in visited:
                         visited.append(neighbor)
                         save_level_node.append(neighbor)
@@ -63,6 +63,9 @@ class Graph:
                 return visited  # No end give
             else:
                 return None  #No path exist
+        
+            
+
 
 
 
