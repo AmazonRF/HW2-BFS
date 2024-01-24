@@ -1,6 +1,7 @@
 # write tests for bfs
 import pytest
-from search import graph
+import networkx as nx
+from search import Graph
 
 def test_bfs_traversal():
     """
@@ -8,7 +9,7 @@ def test_bfs_traversal():
     traversal here. Create an instance of your Graph class 
     using the 'tiny_network.adjlist' file and assert 
     that all nodes are being traversed (ie. returns 
-    the right number of nodes, in the right order, etc.)
+    the right number of nodes, in the right order, etc..)
     """
     graph = nx.read_adjlist("./data/tiny_network.adjlist", create_using=nx.DiGraph, delimiter=";")
     start_node = list(graph.nodes())[0]
