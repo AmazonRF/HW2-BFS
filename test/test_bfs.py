@@ -59,13 +59,11 @@ def test_bfs():
 
     are_connected = nx.has_path(tiny_graph_nx, start_node, end_node)
     if are_connected:
-        nx_path = nx.shortest_path_length(tiny_graph_nx, source=start_node, target=end_node)
-        assert len(my_bfs_path) == nx_path
+        nx_path_lenth = len(nx.shortest_path(tiny_graph_nx, source=start_node, target=end_node))
+        assert len(my_bfs_path) == nx_path_lenth
     else:
         nx_path = None
         assert my_bfs_path == nx_path
-
-    
 
     ##### not connected ########
     start_node = '34356065'
@@ -75,8 +73,8 @@ def test_bfs():
 
     are_connected = nx.has_path(tiny_graph_nx, start_node, end_node)
     if are_connected:
-        nx_path = nx.shortest_path_length(tiny_graph_nx, source=start_node, target=end_node)
-        assert len(my_bfs_path) == nx_path
+        nx_path_lenth = len(nx.shortest_path(tiny_graph_nx, source=start_node, target=end_node))
+        assert len(my_bfs_path) == nx_path_lenth
     else:
         nx_path = None
         assert my_bfs_path == nx_path
