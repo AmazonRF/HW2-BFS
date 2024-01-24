@@ -24,7 +24,7 @@ def test_bfs_traversal():
     assert my_bfs_path == groundTruth
 
     ##### test not exist node ########
-    start_node = 'Yifei Chen"
+    start_node = 'Yifei Chen'
     my_bfs_path = tiny_graph_my.bfs(start_node)
     assert my_bfs_path == None
 
