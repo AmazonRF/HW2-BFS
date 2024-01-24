@@ -20,8 +20,11 @@ class Graph:
             * If there is an end node input and a path exists, return a list of nodes with the order of the shortest path
             * If there is an end node input and a path does not exist, return None
 
+            start is assigned start node
+            end is assigned end node, is optional, if end = None then traversal, if not find the shortest distance
+
             """
-            graph_ = self.graph
+            graph_ = self.graph  #this variable stores the input graph
             
             if start not in graph_:
                 return None  # Start node not in the graph
@@ -29,10 +32,10 @@ class Graph:
                 return None  # End node not in the graph
 
             visited = []
-            save_level_node = []
+            save_level_node = []    #this variable save the save level node as the level order, basically this is my queue
             save_level_node.append(start)
 
-            #1 child only can have 1 mom but 1 mom can have multi child
+            #1 child only can have 1 mom but 1 mom can have multi child, so in here child is keyword mom is value
             child_Mom = {start: None}
 
             while len(save_level_node)>0:
