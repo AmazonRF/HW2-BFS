@@ -1,4 +1,4 @@
-![BuildStatus](https://github.com/AmazonRF/HW2-BFS/actions/workflows/pytest.yml?event=push)
+![BuildStatus](https://github.com/AmazonRF/HW2-BFS/actions/workflows/pytest.yml/badge.svg?event=push)
 
 
 
