@@ -47,8 +47,8 @@ def test_bfs():
     Include an additional test for nodes that are not connected 
     which should return None. 
     """
-    tiny_graph_nx = nx.read_adjlist("/Users/yifeichen/Desktop/winter24/HW2-BFS/data/citation_network.adjlist", create_using=nx.DiGraph, delimiter=";")
-    tiny_graph_my = graph.Graph("/Users/yifeichen/Desktop/winter24/HW2-BFS/data/citation_network.adjlist")
+    tiny_graph_nx = nx.read_adjlist("./data/citation_network.adjlist", create_using=nx.DiGraph, delimiter=";")
+    tiny_graph_my = graph.Graph("./data/citation_network.adjlist")
     
     ##### connected ########
     
@@ -57,7 +57,7 @@ def test_bfs():
 
     my_bfs_path = tiny_graph_my.bfs(start_node,end_node)
 
-    are_connected = nx.has_path(G, start_node, end_node)
+    are_connected = nx.has_path(tiny_graph_nx, start_node, end_node)
     if are_connected:
         nx_path = nx.shortest_path_length(tiny_graph_nx, source=start_node, target=end_node)
         assert len(my_bfs_path) == nx_path
@@ -73,7 +73,7 @@ def test_bfs():
 
     my_bfs_path = tiny_graph_my.bfs(start_node,end_node)
 
-    are_connected = nx.has_path(G, start_node, end_node)
+    are_connected = nx.has_path(tiny_graph_nx, start_node, end_node)
     if are_connected:
         nx_path = nx.shortest_path_length(tiny_graph_nx, source=start_node, target=end_node)
         assert len(my_bfs_path) == nx_path
