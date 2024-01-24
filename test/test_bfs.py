@@ -10,7 +10,15 @@ def test_bfs_traversal():
     that all nodes are being traversed (ie. returns 
     the right number of nodes, in the right order, etc.)
     """
-    pass
+    graph = nx.read_adjlist("./data/tiny_network.adjlist", create_using=nx.DiGraph, delimiter=";")
+    start_node = list(graph.nodes())[0]
+    
+    groundTruth = list(nx.bfs_edges(graph, start_node))
+    groundTruth = [start_node] + [v for u, v in groundTruth]
+
+    my_bfs_path = Graph.bfs(graph, start_node)
+
+    assert my_bfs_path == groundTruth
 
 def test_bfs():
     """
