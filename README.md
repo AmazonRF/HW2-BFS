@@ -1,7 +1,7 @@
 ![BuildStatus](https://github.com/AmazonRF/HW2-BFS/actions/workflows/pytest.yml/badge.svg?event=push)
 
 
-# Assignment Introduction
+# Methods Description
 The provided `bfs` method implements the Breadth-First Search (BFS) algorithm for both traversal and shortest path finding in a graph. It begins by checking if the graph is empty or if the start and end nodes are valid, returning `None` if any conditions are not met. The method uses a queue, `save_level_node`, to maintain nodes at the current level, ensuring a level-by-level traversal of the graph. As it visits each node, starting from the specified `start` node, it marks them as visited and explores their neighbors. For path finding, it keeps track of each node's predecessor in the `child_Mom` dictionary, allowing the method to reconstruct the shortest path from the end node back to the start node, if an `end` node is provided. If no path is found or no end node is specified, it returns either `None` or a list of visited nodes, ensuring a comprehensive BFS implementation.
 
 # Assignment 2
