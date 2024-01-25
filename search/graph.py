@@ -25,6 +25,11 @@ class Graph:
 
             """
             graph_ = self.graph  #this variable stores the input graph
+
+            #empty error
+            if graph_.number_of_nodes() == 0:
+                raise ValueError("The graph is empty")
+
             
             if start not in graph_:
                 return None  # Start node not in the graph
